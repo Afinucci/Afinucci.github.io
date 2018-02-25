@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cryptocoin Investment</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Cryptocoin Investment">
+  <meta name="author" content="Antonello Finucci">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Cryptocoin Investment</h1>
+    <h2>How rich could have you been ...?</h2>
+    <p>Antonello Finucci<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Investment in Cryptocoins....</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Nowdays there are a lot of people talking about cryptocoins and how risky or
+rewarding they have been in the past.</li>
+<li>The app gives an overview about how good or bad an investment in one of the today 5 major cryptocoins would have been.</li>
+<li>The cryptocoin data are taken from the exchange plattform Poloniex using the</li>
+</ul>
+
+<pre><code class="r">        suppressPackageStartupMessages(library(PoloniexR))
+</code></pre>
+
+<ul>
+<li>In the following slides an investment example, using Ethereum, that you could repeat using the app is shown</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The incredible growth of Crypto Coins</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The development of the Ethereum price in $ from 2016-01-01 until the 2017-12-31.</p>
+
+<pre><code class="r">          ggplot(chart.df, aes(x= chart.df$Date, y= chart.df$close))+
+            geom_line()+ labs(title = &quot;Trend for the selected Cryptocoin&quot;,
+                              x = &quot;Investment period&quot;,y=&quot;ETH-USDT&quot;)
+</code></pre>
+
+<p><img src="figure/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Investment example</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>If you would have invested 100$ in Ethereum on the 2016-01-01 at the end of last year you would have got....</p>
+
+<pre><code class="r">    amount_invested &lt;- 100
+    return_Dollar &lt;- round((chart.df[chart.df$Date==&quot;2017-12-31&quot;,5]/
+                  chart.df[chart.df$Date==&quot;2016-01-01&quot;,5]) *amount_invested, 2)
+</code></pre>
+
+<p>\(Value = \frac{ETH_{value(2017-12-31)}}{ETH_{value(2016-01-01)}} * amount invested=\) 76758.74$</p>
+
+<pre><code class="r"># Percetage return
+
+        Perc_ret &lt;- round((return_Dollar- amount_invested)/amount_invested *100,2)
+</code></pre>
+
+<p>$Percetage Return = \frac{Value - amount invested}{amount invested}*100=$76658.74%</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Conclusions</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Investment in the 5 cryptocoins contained in the app have been all very profitable</li>
+<li>In the investement example given for ETH you would have increased of 766.58 times your initial investment</li>
+<li>Remember that investing in Cryptocoins is very dangereous because of the high volatility</li>
+<li>Nobody knows if in the future they will keep developing like they have done in the past.</li>
+<li>For the moment enjoy my app and NO REGRETS...</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Investment in Cryptocoins....'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='The incredible growth of Crypto Coins'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Investment example'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Conclusions'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
